@@ -34,6 +34,17 @@ public class FirstRead {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
